@@ -33,7 +33,7 @@ void monty_rotl(stack_t **stack, unsigned int line_number)
 void monty_rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *top, *bottom;
-	
+
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 		return;
 	top = (*stack)->next;
