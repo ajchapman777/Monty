@@ -11,6 +11,7 @@ int check_mode(stack_t *stack);
 void free_stack(stack_t **stack)
 {
 	stack_t *tmp = *stack;
+
 	while (*stack)
 	{
 		tmp = (*stack)->next;
@@ -29,6 +30,7 @@ void free_stack(stack_t **stack)
 int init_stack(stack_t **stack)
 {
 	stack_t *s;
+
 	s = malloc(sizeof(stack_t));
 
 	if (s == NULL)
