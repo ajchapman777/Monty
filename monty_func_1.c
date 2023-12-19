@@ -13,9 +13,9 @@ void monty_push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp, *new;
 	int i;
-	
+
 	new = malloc(sizeof(stack_t));
-	
+
 	if (new == NULL)
 	{
 		set_op_tok_error(malloc_error());
@@ -37,7 +37,7 @@ void monty_push(stack_t **stack, unsigned int line_number)
 		}
 	}
 	new->n = atoi(op_toks[1]);
-	
+
 	if (check_mode(*stack) == STACK) /* STACK mode insert at front */
 	{
 		tmp = (*stack)->next;
@@ -97,6 +97,7 @@ void monty_pint(stack_t **stack, unsigned int line_number)
 void monty_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *next = NULL;
+
 	if ((*stack)->next == NULL)
 	{
 		set_op_tok_error(pop_error(line_number));
@@ -116,6 +117,7 @@ void monty_pop(stack_t **stack, unsigned int line_number)
 void monty_swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
+
 	if ((*stack)->next == NULL || (*stack)->next->next == NULL)
 	{
 		set_op_tok_error(short_stack_error(line_number, "swap"));
